@@ -26,34 +26,34 @@ export default function Home() {
         </div>
 
         <div className="hidden items-center gap-8 md:flex">
-          <Link href="#" className="text-white underline underline-offset-4 hover:opacity-80 transition-opacity tracking-[0.05em]">
+          <Link href="#" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
             About us
           </Link>
-          <Link href="#" className="text-white underline underline-offset-4 hover:opacity-80 transition-opacity tracking-[0.05em]">
+          <Link href="#" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
             Blackwell
           </Link>
-          <Link href="#" className="text-white underline underline-offset-4 hover:opacity-80 transition-opacity tracking-[0.05em]">
+          <Link href="#" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
             Velora
           </Link>
-          <Link href="#" className="text-white underline underline-offset-4 hover:opacity-80 transition-opacity tracking-[0.05em]">
+          <Link href="#" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
             Sustainability
           </Link>
-          <Link href="#" className="text-white underline underline-offset-4 hover:opacity-80 transition-opacity tracking-[0.05em]">
+          <Link href="#" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
             Pricing
           </Link>
-          <Link href="#" className="text-white underline underline-offset-4 hover:opacity-80 transition-opacity tracking-[0.05em]">
+          <Link href="#" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
             Sentinel
           </Link>
         </div>
 
-        <div className="flex items-center gap-2">
-          <button className="bg-[#2a2a2a] border border-[#444] px-4 py-2 text-sm text-white hover:bg-[#3a3a3a] transition-colors tracking-[0.05em]">
+        <div className="flex items-center">
+          <button className="bg-black px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors tracking-[0.05em]">
             Contact us
           </button>
-          <button className="bg-[#2a2a2a] border border-[#444] px-4 py-2 text-sm text-white hover:bg-[#3a3a3a] transition-colors tracking-[0.05em]">
+          <button className="bg-[#002BFF] px-4 py-2 text-sm text-white hover:bg-[#0022cc] transition-colors tracking-[0.05em]">
             Login
           </button>
-          <button className="bg-[#3B5BDB] px-4 py-2 text-sm text-white hover:bg-[#2f4ab8] transition-colors tracking-[0.05em]">
+          <button className="bg-[#002BFF] px-4 py-2 text-sm text-white hover:bg-[#0022cc] transition-colors tracking-[0.05em]">
             Sign up
           </button>
         </div>
@@ -70,14 +70,11 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="mt-12 flex items-center gap-4">
-          <button className="relative rounded-full px-8 py-3 text-lg text-white transition-all hover:scale-105 overflow-visible group">
-            <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#3B5BDB] via-[#8B5CF6] to-[#D946EF] opacity-80"></span>
-            <span className="absolute inset-[2px] rounded-full bg-black"></span>
-            <span className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#3B5BDB] via-[#8B5CF6] to-[#D946EF] opacity-50 blur-md group-hover:opacity-70 transition-opacity"></span>
-            <span className="relative z-10 tracking-[0.05em]">Get started</span>
+        <div className="mt-12 flex items-center gap-3">
+          <button className="bg-black rounded-full px-9 py-4 text-[22px] text-white transition-all hover:scale-105 tracking-[0.05em]" style={{ fontFamily: "var(--font-space-grotesk)", fontWeight: 400 }}>
+            Get started
           </button>
-          <button className="rounded-full border-2 border-white px-8 py-3 text-lg text-white transition-colors hover:bg-white/10 tracking-[0.05em]">
+          <button className="bg-black border-[2.2px] border-white rounded-full px-9 py-4 text-[22px] text-white transition-colors hover:bg-white/10 tracking-[0.05em]" style={{ fontFamily: "var(--font-space-grotesk)", fontWeight: 400 }}>
             Contact us
           </button>
         </div>
