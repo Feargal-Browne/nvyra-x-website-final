@@ -2,8 +2,27 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
+import { User } from "@supabase/supabase-js";
 
 export default function Home() {
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUser(user);
+    };
+    getUser();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-black">
       <div
@@ -38,7 +57,7 @@ export default function Home() {
           <Link href="#" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
             Sustainability
           </Link>
-          <Link href="#" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
+          <Link href="/pricing" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
             Pricing
           </Link>
           <Link href="#" className="text-[#FFFEFE]/90 text-[20px] font-normal hover:opacity-80 transition-opacity">
@@ -50,18 +69,29 @@ export default function Home() {
           <button className="bg-black border border-white/20 px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors tracking-[0.05em]">
             Contact us
           </button>
-          <Link 
-            href="/login"
-            className="bg-black border-y border-r border-white/20 px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors tracking-[0.05em]"
-          >
-            Login
-          </Link>
-          <Link 
-            href="/signup" 
-            className="bg-[#002BFF] border border-[#002BFF] px-4 py-2 text-sm text-white hover:bg-[#0022cc] transition-colors tracking-[0.05em]"
-          >
-            Sign up
-          </Link>
+          {user ? (
+            <Link 
+              href="/dashboard"
+              className="bg-black border-y border-r border-white/20 px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors tracking-[0.05em]"
+            >
+              Dashboard
+            </Link>
+          ) : (
+            <>
+              <Link 
+                href="/login"
+                className="bg-black border-y border-r border-white/20 px-4 py-2 text-sm text-white hover:bg-black hover:border-[#002BFF] transition-all duration-300 tracking-[0.05em]"
+              >
+                Login
+              </Link>
+              <Link 
+                href="/signup" 
+                className="bg-[#002BFF] border border-[#002BFF] px-4 py-2 text-sm text-white hover:bg-[#0022cc] transition-colors tracking-[0.05em]"
+              >
+                Sign up
+              </Link>
+            </>
+          )}
         </div>
       </nav>
 

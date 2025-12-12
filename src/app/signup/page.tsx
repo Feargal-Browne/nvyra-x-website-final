@@ -15,10 +15,14 @@ export default function SignupPage() {
   const validatePassword = (pwd: string) => {
     const minLength = pwd.length >= 12;
     const hasCapital = /[A-Z]/.test(pwd);
+    const hasLower = /[a-z]/.test(pwd);
+    const hasNumber = /[0-9]/.test(pwd);
     const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(pwd);
     
     if (!minLength) return "Password must be at least 12 characters long";
     if (!hasCapital) return "Password must contain at least one capital letter";
+    if (!hasLower) return "Password must contain at least one lowercase letter";
+    if (!hasNumber) return "Password must contain at least one number";
     if (!hasSpecial) return "Password must contain at least one special character";
     
     return null;
@@ -43,6 +47,12 @@ export default function SignupPage() {
       });
 
       if (signUpError) throw signUpError;
+
+      if (data?.user && !data.session) {
+         setError("Please check your email to confirm your account.");
+         setLoading(false);
+         return;
+      }
 
       window.location.href = "/";
     } catch (err: any) {
@@ -124,7 +134,7 @@ export default function SignupPage() {
               className="w-full bg-black/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-[#002BFF] transition-colors"
             />
             <p className="text-xs text-white/40 ml-1 mt-1">
-              12+ characters, 1 capital letter, 1 special character
+              12+ chars, upper & lowercase, number, special char
             </p>
           </div>
 
