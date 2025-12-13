@@ -11,17 +11,21 @@ export default function Home() {
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765566761862.png?width=8000&height=8000&resize=contain"
           alt="Background"
           fill
-          className="object-cover opacity-100"
+          className="object-cover opacity-90"
           priority
           quality={100}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/40 pointer-events-none" />
       </div>
 
       {/* Navbar */}
-      <header className="relative z-50 flex items-center justify-between px-6 py-6 md:px-12">
-        <div className="flex items-center gap-3">
-          <Hexagon className="h-8 w-8 text-blue-500 stroke-[1.5]" />
-          <span className="text-xl font-normal tracking-wide">Nvyra X</span>
+      <header className="relative z-50 flex items-center justify-between px-6 py-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="flex items-center gap-2">
+          <div className="relative">
+            <Hexagon className="h-8 w-8 text-blue-600 fill-blue-600/20 stroke-[1.5]" />
+            <div className="absolute inset-0 blur-sm bg-blue-500/30 rounded-full" />
+          </div>
+          <span className="text-2xl font-bold tracking-tight text-white">Nvyra <span className="text-blue-500">X</span></span>
         </div>
 
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
@@ -41,10 +45,10 @@ export default function Home() {
 
         <div className="flex items-center gap-6">
           <Link href="#" className="text-sm font-medium text-gray-300 hover:text-white hidden sm:block border border-transparent hover:border-white/20 px-4 py-2 rounded-full transition-all">Contact us</Link>
-          <Link href="#" className="text-sm font-medium text-gray-300 hover:text-white hidden sm:block">Login</Link>
+          <Link href="/login" className="text-sm font-medium text-gray-300 hover:text-white hidden sm:block">Login</Link>
           <Link
-            href="#"
-            className="rounded-none bg-[#0044ff] px-6 py-2.5 text-sm font-medium text-white hover:bg-blue-600 transition-colors"
+            href="/signup"
+            className="rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-2.5 text-sm font-medium text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
           >
             Sign up
           </Link>
@@ -52,17 +56,17 @@ export default function Home() {
       </header>
 
       {/* Hero Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center pt-32 px-4 text-center">
-        <h1 className="max-w-5xl text-5xl md:text-7xl lg:text-8xl font-light tracking-wide leading-[1.1] mb-12">
+      <main className="relative z-10 flex flex-col items-center justify-center pt-32 px-4 text-center min-h-[80vh]">
+        <h1 className="max-w-6xl text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter leading-[1] mb-12 drop-shadow-2xl">
           The AI infrastructure that brings <br />
-          <span className="italic font-normal">clarity</span> to complexity.
+          <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">clarity</span> to complexity.
         </h1>
 
-        <div className="flex flex-col sm:flex-row gap-6 mt-4">
-          <button className="rounded-full border border-purple-500 bg-transparent px-10 py-3.5 text-lg font-medium text-white hover:bg-purple-500/10 transition-all hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+        <div className="flex flex-col sm:flex-row gap-6 mt-8">
+          <button className="rounded-full bg-white text-black px-12 py-4 text-lg font-bold hover:bg-gray-100 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-white/10">
             Get started
           </button>
-          <button className="rounded-full border border-white bg-transparent px-10 py-3.5 text-lg font-medium text-white hover:bg-white/10 transition-colors">
+          <button className="rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-12 py-4 text-lg font-medium text-white hover:bg-white/10 transition-all hover:scale-105 active:scale-95">
             Contact us
           </button>
         </div>
