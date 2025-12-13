@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Jost } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const jost = Jost({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-jost",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} antialiased font-sans`}
+        className={`${jost.variable} antialiased font-sans`}
       >
         {children}
       </body>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Hexagon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -14,38 +15,31 @@ export default function Home() {
           priority
           quality={100}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
       </div>
 
       {/* Navbar */}
       <header className="relative z-50 flex items-center justify-between px-6 py-6 md:px-12 max-w-7xl mx-auto w-full">
-        <div className="flex items-center gap-2">
-          <Link href="/" className="text-2xl font-bold tracking-tight text-white hover:opacity-90 transition-opacity">
-            Nvyra <span className="text-blue-500">X</span>
-          </Link>
+        <div className="flex items-center gap-3">
+          <Hexagon className="h-8 w-8 text-white stroke-[1.5]" />
+          <span className="text-2xl font-medium tracking-wide text-white">Nvyra X</span>
         </div>
 
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <nav className="hidden lg:flex items-center gap-8 text-base font-normal text-gray-200">
           <Link href="#" className="hover:text-white transition-colors">About us</Link>
-          <Link href="#" className="hover:text-white transition-colors relative group">
-            Blackwell
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
-          </Link>
-          <Link href="#" className="hover:text-white transition-colors relative group">
-            Velora
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-500 transition-all group-hover:w-full"></span>
-          </Link>
+          <Link href="#" className="hover:text-white transition-colors">Blackwell</Link>
+          <Link href="#" className="hover:text-white transition-colors">Velora</Link>
           <Link href="#" className="hover:text-white transition-colors">Sustainability</Link>
           <Link href="#" className="hover:text-white transition-colors">Pricing</Link>
           <Link href="#" className="hover:text-white transition-colors">Sentinel</Link>
         </nav>
 
-        <div className="flex items-center gap-6">
-          <Link href="#" className="text-sm font-medium text-gray-300 hover:text-white border border-transparent hover:border-white/20 px-4 py-2 rounded-full transition-all">Contact us</Link>
-          <Link href="/login" className="text-sm font-medium text-gray-300 hover:text-white">Login</Link>
+        <div className="flex items-center gap-4">
+          <Link href="#" className="text-sm font-medium text-white border border-white/30 px-5 py-2 rounded-none hover:bg-white/10 transition-all">Contact us</Link>
+          <Link href="/login" className="text-sm font-medium text-white px-4 hover:opacity-80 transition-opacity">Login</Link>
           <Link
             href="/signup"
-            className="rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-2.5 text-sm font-medium text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+            className="bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-all"
           >
             Sign up
           </Link>
@@ -53,17 +47,20 @@ export default function Home() {
       </header>
 
       {/* Hero Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center pt-20 px-4 text-center min-h-[70vh]">
-        <h1 className="max-w-6xl text-5xl md:text-7xl font-semibold tracking-tighter leading-[1.1] mb-12 drop-shadow-2xl">
+      <main className="relative z-10 flex flex-col items-center justify-center pt-24 px-4 text-center min-h-[75vh]">
+        <h1 className="max-w-6xl text-5xl md:text-7xl font-light tracking-wide leading-tight mb-16 drop-shadow-2xl">
           The AI infrastructure that brings <br />
-          <span className="italic font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">clarity</span> to complexity.
+          <span className="italic">clarity</span> to complexity.
         </h1>
 
-        <div className="flex flex-col sm:flex-row gap-6 mt-4">
-          <button className="rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-12 py-4 text-lg font-bold text-white hover:shadow-lg hover:shadow-blue-500/25 transition-all hover:scale-105 active:scale-95">
-            Get started
+        <div className="flex flex-col sm:flex-row gap-6">
+          <button className="group relative rounded-full px-[2px] py-[2px] bg-gradient-to-r from-purple-600 to-blue-600 hover:scale-105 transition-transform">
+            <div className="bg-black rounded-full px-10 py-3.5 relative">
+               <span className="text-lg font-normal text-white">Get started</span>
+            </div>
           </button>
-          <button className="rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-12 py-4 text-lg font-medium text-white hover:bg-white/10 transition-all hover:scale-105 active:scale-95">
+          
+          <button className="rounded-full border border-white px-10 py-3.5 text-lg font-normal text-white hover:bg-white/10 transition-all hover:scale-105">
             Contact us
           </button>
         </div>
