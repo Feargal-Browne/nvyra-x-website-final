@@ -3,6 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { LogoCarousel } from "@/components/LogoCarousel";
+import { IndustryCarousel } from "@/components/IndustryCarousel";
+import { LeaderboardSection } from "@/components/LeaderboardSection";
+import { FeatureGrid } from "@/components/FeatureGrid";
 
 export default function Home() {
   return (
@@ -110,6 +113,9 @@ export default function Home() {
         </div>
         
         <LogoCarousel />
+        <IndustryCarousel />
+        <LeaderboardSection />
+        <FeatureGrid />
       </main>
     </div>
   );

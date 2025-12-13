@@ -18,24 +18,27 @@ const logoUrls = [
 export function LogoCarousel() {
   return (
     <div 
-      className="relative w-full overflow-hidden py-6 border-y border-white/5 bg-black/40 backdrop-blur-sm" 
+      className="relative w-full overflow-hidden py-8 border-y border-white/10"
+      style={{
+        background: "linear-gradient(90deg, #000000 0%, #0a0a20 25%, #1a0b2e 50%, #0a0a20 75%, #000000 100%)"
+      }}
     >
       <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-      <div className="flex animate-marquee-scroll gap-16 w-max items-center">
+      <div className="flex animate-marquee-scroll gap-20 w-max items-center">
         {[...logoUrls, ...logoUrls, ...logoUrls, ...logoUrls].map((url, index) => (
           <div 
             key={index} 
-            className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity"
+            className="flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity"
           >
-            <div className="relative h-8 w-40">
+            <div className="relative h-12 w-48">
                <Image 
                  src={url} 
                  alt={`Partner logo ${index}`}
                  fill
-                 className="object-contain brightness-0 invert"
-                 sizes="160px"
+                 className="object-contain"
+                 sizes="192px"
                />
             </div>
           </div>

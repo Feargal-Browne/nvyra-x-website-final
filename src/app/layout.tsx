@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Jost, Space_Grotesk, Nothing_You_Could_Do, Geist, Rajdhani, Inter } from "next/font/google";
 import "./globals.css";
 import { VisualEditsMessenger } from "orchids-visual-edits";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const jost = Jost({
   variable: "--font-jost",
@@ -55,6 +56,7 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-jost), sans-serif" }}
       >
         {children}
+        <CookieBanner />
         <VisualEditsMessenger />
       </body>
     </html>
