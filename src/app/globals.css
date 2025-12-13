@@ -128,7 +128,7 @@
 
   @keyframes marquee-scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-33.333%); }
+    100% { transform: translateX(-25%); }
   }
 
   @keyframes spin-slow {
@@ -148,7 +148,7 @@
 }
 
 .animate-marquee-scroll {
-  animation: marquee-scroll 40s linear infinite;
+  animation: marquee-scroll 60s linear infinite;
 }
 
 .animate-spin-slow {

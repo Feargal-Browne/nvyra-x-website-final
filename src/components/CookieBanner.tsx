@@ -36,11 +36,11 @@ export function CookieBanner() {
 
   return (
     <div 
-      className="fixed bottom-6 left-6 z-[9999] w-[500px] max-w-[calc(100vw-48px)] bg-white rounded-lg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.1)] border border-transparent font-sans"
+      className="fixed bottom-6 left-6 z-[9999] w-[500px] max-w-[calc(100vw-48px)] bg-black rounded-lg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/10 font-sans"
       style={{ fontFamily: 'var(--font-inter), sans-serif' }}
     >
       <div className="flex flex-col gap-6">
-        <div className="text-sm text-black/80 leading-relaxed">
+        <div className="text-sm text-white/90 leading-relaxed">
           <p>
             We and our partners use cookies, scripts and certain similar technologies ("Cookies") to collect data from visitors to this site, including IP address, clicks, and other details about them and their usage.
           </p>
@@ -48,22 +48,22 @@ export function CookieBanner() {
         
         <div className="flex items-center justify-end gap-2">
           <button 
-            className="px-4 py-2 text-sm font-medium text-[#212121] bg-transparent border-b border-[#2E2E2E] hover:opacity-70 transition-opacity mr-auto"
-            onClick={() => {}} // No-op for now as requested just specific buttons
+            className="px-4 py-2 text-sm font-medium text-white/70 bg-transparent border-b border-white/30 hover:text-white transition-colors mr-auto"
+            onClick={() => {}} // No-op for now
           >
             Settings
           </button>
           
           <button 
             onClick={() => handleConsent("reject_optional")}
-            className="px-4 py-2 text-sm font-medium text-[#212121] bg-white border border-[#2E2E2E] rounded-full hover:bg-gray-50 transition-colors"
+            className="px-4 py-2 text-sm font-medium text-white bg-black border border-white rounded-full hover:bg-white/10 transition-colors"
           >
             Reject optional
           </button>
           
           <button 
             onClick={() => handleConsent("accept_all")}
-            className="px-4 py-2 text-sm font-medium text-white bg-[#17171C] border border-transparent rounded-full hover:bg-[#17171C]/90 transition-colors"
+            className="px-4 py-2 text-sm font-medium text-black bg-white border border-white rounded-full hover:bg-white/90 transition-colors"
           >
             Accept all
           </button>
