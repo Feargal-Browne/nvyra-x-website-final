@@ -25,7 +25,7 @@ export default function Home() {
 
         <nav className="relative z-10 flex items-center justify-between px-6 py-4 border-b border-white/5">
           <div className="flex items-center gap-3">
-            <div className="relative w-32 h-32 mix-blend-screen">
+            <div className="relative w-64 h-64">
                <Image
                 src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765567223502.png"
                 alt="Nvyra X Logo"
@@ -60,19 +60,19 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <Link 
               href="/contact"
-              className="px-4 py-1.5 text-xs font-medium text-white border border-white/30 rounded hover:bg-white/10 transition-colors tracking-wide"
+              className="px-2 py-1 text-[10px] font-medium text-white border border-white/30 rounded hover:bg-white/10 transition-colors tracking-wide"
             >
               Contact us
             </Link>
             <Link 
               href="/login"
-              className="px-4 py-1.5 text-xs font-medium text-white border border-white/30 rounded hover:bg-white/10 transition-colors tracking-wide"
+              className="px-2 py-1 text-[10px] font-medium text-white border border-white/30 rounded hover:bg-white/10 transition-colors tracking-wide"
             >
               Login
             </Link>
             <Link 
               href="/signup" 
-              className="px-4 py-1.5 text-xs font-medium text-white bg-[#2563EB] hover:bg-[#1d4ed8] rounded transition-colors tracking-wide"
+              className="px-2 py-1 text-[10px] font-medium text-white bg-[#2563EB] hover:bg-[#1d4ed8] rounded transition-colors tracking-wide"
             >
               Sign up
             </Link>
@@ -80,8 +80,8 @@ export default function Home() {
         </nav>
 
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
-          <div className="max-w-5xl mx-auto">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white tracking-tight leading-tight mb-8">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-light text-white tracking-tight leading-tight mb-8">
               The AI infrastructure that brings <br />
               <span className="font-normal italic">clarity</span> to complexity.
             </h1>
