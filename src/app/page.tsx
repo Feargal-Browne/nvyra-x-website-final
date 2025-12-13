@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { LogoCarousel } from "@/components/LogoCarousel";
 
 export default function Home() {
   return (
@@ -65,21 +66,36 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="relative z-10 flex min-h-[calc(100vh-80px)] flex-col items-center justify-center px-6">
-        <div className="text-center">
-          <h1 className="text-4xl font-light text-white md:text-5xl lg:text-6xl tracking-[0.05em]">
-            The AI infastructure that brings
-          </h1>
-          <h1 className="mt-2 text-4xl font-light text-white md:text-5xl lg:text-6xl tracking-[0.05em]">
-            <span className="italic">clarity</span>{" "}
-            <span className="not-italic">to complexity.</span>
-          </h1>
-        </div>
+      <main className="relative z-10 flex min-h-[calc(100vh-80px)] flex-col justify-between">
+        <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
+          <div className="text-center">
+            <h1 className="text-4xl font-light text-white md:text-5xl lg:text-6xl tracking-[0.05em]">
+              The AI infastructure that brings
+            </h1>
+            <h1 className="mt-2 text-4xl font-light text-white md:text-5xl lg:text-6xl tracking-[0.05em]">
+              <span className="italic">clarity</span>{" "}
+              <span className="not-italic">to complexity.</span>
+            </h1>
+          </div>
 
-        <div className="mt-12 flex items-center gap-3">
-          <div className="group relative p-[2px] rounded-full bg-gradient-to-r from-[#FF00FF] via-[#8000FF] to-[#002BFF]">
+          <div className="mt-12 flex items-center gap-3">
+            <div className="group relative p-[2px] rounded-full bg-gradient-to-r from-[#FF00FF] via-[#8000FF] to-[#002BFF]">
+              <button 
+                className="relative flex items-center justify-center bg-black rounded-full text-white transition-all hover:bg-black/90 tracking-[0.05em]"
+                style={{ 
+                  fontFamily: "var(--font-space-grotesk)", 
+                  fontWeight: 400,
+                  width: '156px',
+                  height: '64px',
+                  fontSize: '22px'
+                }}
+              >
+                Get started
+              </button>
+            </div>
+
             <button 
-              className="relative flex items-center justify-center bg-black rounded-full text-white transition-all hover:bg-black/90 tracking-[0.05em]"
+              className="bg-black border-[2.2px] border-white rounded-full text-white transition-colors hover:bg-white/10 tracking-[0.05em] flex items-center justify-center"
               style={{ 
                 fontFamily: "var(--font-space-grotesk)", 
                 fontWeight: 400,
@@ -88,23 +104,12 @@ export default function Home() {
                 fontSize: '22px'
               }}
             >
-              Get started
+              Contact us
             </button>
           </div>
-
-          <button 
-            className="bg-black border-[2.2px] border-white rounded-full text-white transition-colors hover:bg-white/10 tracking-[0.05em] flex items-center justify-center"
-            style={{ 
-              fontFamily: "var(--font-space-grotesk)", 
-              fontWeight: 400,
-              width: '156px',
-              height: '64px',
-              fontSize: '22px'
-            }}
-          >
-            Contact us
-          </button>
         </div>
+        
+        <LogoCarousel />
       </main>
     </div>
   );
