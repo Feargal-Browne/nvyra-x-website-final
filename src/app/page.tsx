@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BrandLogo from "@/components/ui/brand-logo";
+import BrandCarousel from "@/components/ui/brand-carousel";
 
 export default function Home() {
   return (
@@ -114,6 +115,11 @@ export default function Home() {
           </button>
         </div>
       </main>
+
+      {/* Brand Carousel */}
+      <div className="relative z-10 w-full mt-32">
+        <BrandCarousel />
+      </div>
     </div>
   );
 }
