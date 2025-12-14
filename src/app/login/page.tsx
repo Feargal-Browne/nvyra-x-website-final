@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import { Loader2 } from 'lucide-react'
 import BrandLogo from '@/components/ui/brand-logo'
 import { SocialAuthButtons } from '@/components/ui/social-auth'
+import Image from 'next/image'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -42,20 +43,31 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 font-sans relative overflow-hidden">
-      {/* Background Gradients */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-black to-black -z-10" />
-
-      <div className="absolute top-8 left-8">
-        <Link href="/">
-           <BrandLogo />
-        </Link>
+      {/* Background Image */}
+      <div className="fixed inset-0 z-0">
+        <Image
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765566761862.png?width=8000&height=8000&resize=contain"
+          alt="Background"
+          fill
+          className="object-cover opacity-90"
+          priority
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
       </div>
-      
-      <div className="w-full max-w-md space-y-8 bg-black/50 p-8 border border-white/10 backdrop-blur-sm">
-        <div className="text-center">
-          <h2 className="text-3xl font-light tracking-tight">Welcome back</h2>
-          <p className="mt-2 text-sm text-gray-400">Enter your credentials to access your account</p>
+
+      <div className="relative z-10 w-full flex flex-col items-center">
+        <div className="absolute top-0 left-8 md:fixed md:top-8 md:left-8">
+          <Link href="/">
+             <BrandLogo />
+          </Link>
         </div>
+      
+        <div className="w-full max-w-md space-y-8 bg-black/50 p-8 border border-white/10 backdrop-blur-sm mt-20 md:mt-0">
+          <div className="text-center">
+            <h2 className="text-3xl font-light tracking-tight">Welcome back</h2>
+            <p className="mt-2 text-sm text-gray-400">Enter your credentials to access your account</p>
+          </div>
 
         <div className="space-y-4">
            <SocialAuthButtons />

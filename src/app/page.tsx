@@ -19,15 +19,15 @@ export default function Home() {
       </div>
 
       {/* Navbar Container */}
-      <header className="relative z-50 flex items-end justify-between px-8 mx-auto w-full max-w-[1440px]" style={{ height: '84px' }}>
+      <header className="relative z-50 flex items-end justify-between mx-auto w-full" style={{ width: '1393px', height: '84px' }}>
         
         {/* Logo Section */}
         <div className="flex-none">
           <BrandLogo />
         </div>
 
-        {/* Navigation & Actions Container */}
-        <div className="flex items-center justify-end gap-[26px] flex-grow pb-4">
+        {/* Menu & Auth Container */}
+        <div className="flex items-center justify-end gap-[26px]" style={{ width: '973px', height: '80px' }}>
           
           {/* Menu Links */}
           <nav className="hidden xl:flex items-center gap-[26px]">
@@ -35,8 +35,13 @@ export default function Home() {
               <Link 
                 key={item} 
                 href="#" 
-                className="font-normal text-[20px] leading-[29px] underline text-center"
-                style={{ color: 'rgba(255, 254, 254, 0.9)' }}
+                className="font-normal underline text-center hover:text-white transition-colors"
+                style={{ 
+                  fontFamily: 'Jost',
+                  fontSize: '20px',
+                  lineHeight: '29px',
+                  color: 'rgba(255, 254, 254, 0.9)'
+                }}
               >
                 {item}
               </Link>
@@ -44,37 +49,37 @@ export default function Home() {
           </nav>
 
           {/* Auth Buttons Group */}
-          <div className="flex items-center gap-[8px] ml-8">
+          <div className="flex items-center gap-[7.95px] relative" style={{ width: '240px', height: '38.94px' }}>
             {/* Contact Us */}
             <Link 
               href="#" 
-              className="flex items-center justify-center border border-[#565656]"
-              style={{ width: '87.42px', height: '38.94px', borderWidth: '0.79px' }}
+              className="flex items-center justify-center border border-[#565656] hover:bg-white/10 transition-colors"
+              style={{ width: '87.42px', height: '38.94px', borderWidth: '0.794702px' }}
             >
-              <span className="text-[15.89px] leading-[23px] text-white">Contact us</span>
+              <span style={{ fontFamily: 'Jost', fontSize: '15.894px', lineHeight: '23px', fontWeight: 400 }} className="text-white text-center">Contact us</span>
             </Link>
 
             {/* Login */}
             <Link 
               href="/login" 
-              className="flex items-center justify-center border border-[#565656]"
-              style={{ width: '76.29px', height: '38.94px', borderWidth: '0.79px' }}
+              className="flex items-center justify-center border border-[#565656] hover:bg-white/10 transition-colors"
+              style={{ width: '76.29px', height: '38.94px', borderWidth: '0.794702px' }}
             >
-              <span className="text-[15.89px] leading-[23px] text-white">Login</span>
+              <span style={{ fontFamily: 'Jost', fontSize: '15.894px', lineHeight: '23px', fontWeight: 400 }} className="text-white text-center">Login</span>
             </Link>
 
             {/* Sign Up */}
             <Link 
               href="/signup" 
-              className="flex items-center justify-center border border-[#565656]"
+              className="flex items-center justify-center border border-[#565656] hover:bg-blue-700 transition-colors"
               style={{ 
                 width: '76.29px', 
                 height: '38.94px', 
-                borderWidth: '0.79px',
+                borderWidth: '0.794702px',
                 backgroundColor: '#002BFF' 
               }}
             >
-              <span className="text-[15.89px] leading-[23px] text-white">Sign up</span>
+              <span style={{ fontFamily: 'Jost', fontSize: '15.894px', lineHeight: '23px', fontWeight: 400 }} className="text-white text-center">Sign up</span>
             </Link>
           </div>
         </div>
@@ -85,6 +90,7 @@ export default function Home() {
         <h1 
           className="font-light text-white mb-16 drop-shadow-2xl"
           style={{ 
+            fontFamily: 'Jost',
             fontSize: '64.9px', 
             letterSpacing: '0.05em',
             lineHeight: '1.2'

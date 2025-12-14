@@ -1,7 +1,9 @@
 import { createClient } from '@/lib/supabase/client'
+import { useState } from 'react'
 
 export function SocialAuthButtons() {
   const supabase = createClient()
+  const [hovered, setHovered] = useState<string | null>(null)
 
   const handleSocialLogin = async (provider: 'github' | 'google' | 'apple') => {
     await supabase.auth.signInWithOAuth({
@@ -12,11 +14,24 @@ export function SocialAuthButtons() {
     })
   }
 
+  const getButtonStyle = (provider: string) => {
+    const isHovered = hovered === provider;
+    return {
+      backgroundColor: isHovered ? 'black' : '#002BFF',
+      borderColor: isHovered ? '#002BFF' : 'transparent',
+      borderWidth: '1px',
+      color: 'white'
+    }
+  }
+
   return (
     <div className="flex flex-col gap-3 w-full">
       <button
         onClick={() => handleSocialLogin('github')}
-        className="flex items-center justify-center gap-3 w-full p-3 border border-white/20 hover:bg-white/5 transition-colors text-white"
+        onMouseEnter={() => setHovered('github')}
+        onMouseLeave={() => setHovered(null)}
+        className="flex items-center justify-center gap-3 w-full p-3 transition-colors text-white"
+        style={getButtonStyle('github')}
         type="button"
       >
         <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
@@ -27,7 +42,10 @@ export function SocialAuthButtons() {
 
       <button
         onClick={() => handleSocialLogin('google')}
-        className="flex items-center justify-center gap-3 w-full p-3 border border-white/20 hover:bg-white/5 transition-colors text-white"
+        onMouseEnter={() => setHovered('google')}
+        onMouseLeave={() => setHovered(null)}
+        className="flex items-center justify-center gap-3 w-full p-3 transition-colors text-white"
+        style={getButtonStyle('google')}
         type="button"
       >
         <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
@@ -38,7 +56,10 @@ export function SocialAuthButtons() {
 
       <button
         onClick={() => handleSocialLogin('apple')}
-        className="flex items-center justify-center gap-3 w-full p-3 border border-white/20 hover:bg-white/5 transition-colors text-white"
+        onMouseEnter={() => setHovered('apple')}
+        onMouseLeave={() => setHovered(null)}
+        className="flex items-center justify-center gap-3 w-full p-3 transition-colors text-white"
+        style={getButtonStyle('apple')}
         type="button"
       >
         <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24" aria-hidden="true">
