@@ -19,13 +19,32 @@ export default function Navbar() {
         'Image'
     ];
 
+    const handleLogoClick = (e: React.MouseEvent) => {
+        // On mobile (window width check or just rely on CSS visibility if possible? 
+        // Logic: If the hamburger was visible (md:hidden), then we are on mobile.
+        // But in React logic, we can just check if we want to toggle.
+        // Actually, to support "Logo as Menu" on mobile only:
+        if (window.innerWidth < 768) { // 768px is our 'md' breakpoint
+            e.preventDefault();
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+        }
+        // Desktop: Default Link behavior (go to /)
+        else {
+            setIsMobileMenuOpen(false);
+        }
+    };
+
     return (
         <>
             <header className="relative z-50 flex items-center justify-between mx-auto w-full px-4 sm:px-8 pt-6 max-w-[1440px]">
 
-                {/* Logo Section */}
+                {/* Logo Section - Acts as Menu Toggle on Mobile */}
                 <div className="flex-none z-50">
-                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Link
+                        href="/"
+                        onClick={handleLogoClick}
+                        className="relative z-50 block transition-transform active:scale-95"
+                    >
                         <BrandLogo />
                     </Link>
                 </div>
@@ -85,13 +104,15 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                {/* Mobile Toggle Button - Hidden on md (tablet) now */}
+                {/* Mobile Toggle Button - REMOVED as per request (Logo triggers menu) */}
+                {/* 
                 <button
                     className="md:hidden z-50 text-white p-2"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
-                </button>
+                </button> 
+                */}
 
             </header>
 
