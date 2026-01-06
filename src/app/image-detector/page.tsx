@@ -237,7 +237,7 @@ export default function ImageDetectorPage() {
             </div>
 
             <div className="mt-8 text-center relative z-10">
-                <p className="text-xs text-neutral-600">This AI is in beta testing. Please do not take outputs as the definite truth.</p>
+                <p className="text-sm text-neutral-400 font-medium">This AI is in beta testing. Please do not take outputs as the definite truth.</p>
             </div>
         </div>
     );
