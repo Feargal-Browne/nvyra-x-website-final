@@ -7,7 +7,7 @@ export default function BrandLogo() {
       {/* Logo Image */}
       <div className="relative w-[75.2px] h-[69.62px] flex-none">
         <Image
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765699752917.png?width=8000&height=8000&resize=contain"
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765699752917.png?width=200&resize=contain"
           alt="Nvyra X Logo"
           fill
           className="object-contain"
@@ -16,9 +16,9 @@ export default function BrandLogo() {
       </div>
 
       {/* Text "Nvyra X" */}
-      <span 
+      <span
         className="font-sans text-white text-center flex items-center"
-        style={{ 
+        style={{
           width: '166px',
           height: '29px',
           fontFamily: 'Jost',

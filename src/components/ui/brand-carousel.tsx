@@ -4,30 +4,30 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
 const LOGOS = [
-  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700126984.png?width=8000&height=8000&resize=contain',
-  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700133982.png?width=8000&height=8000&resize=contain',
-  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700140081.png?width=8000&height=8000&resize=contain',
-  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700145837.png?width=8000&height=8000&resize=contain',
-  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700173374.png?width=8000&height=8000&resize=contain',
-  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700184472.png?width=8000&height=8000&resize=contain',
-  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700191687.png?width=8000&height=8000&resize=contain',
-  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700336632.png?width=8000&height=8000&resize=contain',
-  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700378941.png?width=8000&height=8000&resize=contain',
+  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700126984.png?width=400&resize=contain',
+  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700133982.png?width=400&resize=contain',
+  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700140081.png?width=400&resize=contain',
+  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700145837.png?width=400&resize=contain',
+  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700173374.png?width=400&resize=contain',
+  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700184472.png?width=400&resize=contain',
+  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700191687.png?width=400&resize=contain',
+  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700336632.png?width=400&resize=contain',
+  'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/image-1765700378941.png?width=400&resize=contain',
 ];
 
 export default function BrandCarousel() {
   return (
     <div className="relative w-full overflow-hidden py-10">
-        {/* Container with black bg, dark grey outline, and dots pattern */}
-      <div 
+      {/* Container with black bg, dark grey outline, and dots pattern */}
+      <div
         className="absolute inset-0 z-0 bg-black border-y border-[#333333]"
         style={{
-            backgroundImage: 'radial-gradient(#333333 1px, transparent 1px)',
-            backgroundSize: '20px 20px',
-            opacity: 0.8
+          backgroundImage: 'radial-gradient(#333333 1px, transparent 1px)',
+          backgroundSize: '20px 20px',
+          opacity: 0.8
         }}
       />
-      
+
       {/* Scrolling Content */}
       <div className="relative z-10 flex overflow-hidden">
         <div className="flex animate-scroll whitespace-nowrap">
