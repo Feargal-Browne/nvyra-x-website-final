@@ -21,7 +21,7 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="relative z-50 flex items-end justify-between mx-auto w-full px-4 sm:px-8 pt-6 max-w-[1440px]">
+            <header className="relative z-50 flex items-center justify-between mx-auto w-full px-4 sm:px-8 pt-6 max-w-[1440px]">
 
                 {/* Logo Section */}
                 <div className="flex-none z-50">
@@ -30,9 +30,9 @@ export default function Navbar() {
                     </Link>
                 </div>
 
-                {/* Desktop Navigation */}
-                <div className="hidden lg:flex items-center justify-end gap-[26px]">
-                    <nav className="flex items-center gap-[26px]">
+                {/* Desktop Navigation - Changed to md:flex to show on tablet, reduced gap for fit */}
+                <div className="hidden md:flex items-center justify-end gap-4 lg:gap-[26px]">
+                    <nav className="flex items-center gap-4 lg:gap-[26px]">
                         {navLinks.map((item) => (
                             <Link
                                 key={item}
@@ -47,7 +47,7 @@ export default function Navbar() {
                                 )}
                                 style={{
                                     fontFamily: 'Jost, sans-serif',
-                                    fontSize: '20px',
+                                    fontSize: 'clamp(16px, 1.5vw, 20px)', // Responsive font size
                                     lineHeight: '29px',
                                 }}
                             >
@@ -56,11 +56,11 @@ export default function Navbar() {
                         ))}
                     </nav>
 
-                    {/* Auth Buttons Group */}
+                    {/* Auth Buttons Group - Compact on tablet */}
                     <div className="flex items-center gap-2">
                         <Link
                             href="#"
-                            className="flex items-center justify-center border border-[#565656] hover:bg-white/10 transition-colors px-4 h-[39px]"
+                            className="hidden lg:flex items-center justify-center border border-[#565656] hover:bg-white/10 transition-colors px-4 h-[39px]"
                         >
                             <span className="font-sans text-[16px] text-white">Contact us</span>
                         </Link>
@@ -68,15 +68,15 @@ export default function Navbar() {
                         <SignedOut>
                             <Link
                                 href="/login"
-                                className="flex items-center justify-center border border-[#565656] hover:bg-white/10 transition-colors px-4 h-[39px]"
+                                className="flex items-center justify-center border border-[#565656] hover:bg-white/10 transition-colors px-3 lg:px-4 h-[39px]"
                             >
-                                <span className="font-sans text-[16px] text-white">Login</span>
+                                <span className="font-sans text-[14px] lg:text-[16px] text-white">Login</span>
                             </Link>
                             <Link
                                 href="/signup"
-                                className="flex items-center justify-center bg-[#002BFF] border border-[#565656] hover:bg-blue-700 transition-colors px-4 h-[39px]"
+                                className="flex items-center justify-center bg-[#002BFF] border border-[#565656] hover:bg-blue-700 transition-colors px-3 lg:px-4 h-[39px]"
                             >
-                                <span className="font-sans text-[16px] text-white">Sign up</span>
+                                <span className="font-sans text-[14px] lg:text-[16px] text-white">Sign up</span>
                             </Link>
                         </SignedOut>
                         <SignedIn>
@@ -85,9 +85,9 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                {/* Mobile Toggle Button */}
+                {/* Mobile Toggle Button - Hidden on md (tablet) now */}
                 <button
-                    className="lg:hidden z-50 text-white p-2"
+                    className="md:hidden z-50 text-white p-2"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
@@ -95,9 +95,9 @@ export default function Navbar() {
 
             </header>
 
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Menu Overlay - Full Screen with Backdrop Blur */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center lg:hidden animate-in fade-in zoom-in-95 duration-200">
+                <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-sm flex flex-col items-center justify-center md:hidden animate-in fade-in zoom-in-95 duration-200">
                     <nav className="flex flex-col items-center gap-8 mb-8">
                         {navLinks.map((item) => (
                             <Link
